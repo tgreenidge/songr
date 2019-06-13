@@ -9,5 +9,11 @@ A song application
 
 ## Routes
 /hello
+
 /capitalize/{text}
+
 /reverse?sentence={text}
+
+/newAlbum - to create a new album
+
+/allAbums - to display all the albums
