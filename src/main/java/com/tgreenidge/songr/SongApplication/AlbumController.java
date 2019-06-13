@@ -12,6 +12,13 @@ public class AlbumController {
     @Autowired
     AlbumRepository albumRepository;
 
+    @GetMapping("/")
+    public String getAllAlbums(Model m) {
+        Iterable<Album> albums = albumRepository.findAll();
+        m.addAttribute("albums", albums);
+        return "allAlbums.html";
+    }
+
     @GetMapping("/allalbums")
     public String getAllAlbums(Model m) {
         Iterable<Album> albums = albumRepository.findAll();
