@@ -13,7 +13,7 @@ public class AlbumController {
     AlbumRepository albumRepository;
 
     @GetMapping("/")
-    public String getAllAlbums(Model m) {
+    public String getRoot(Model m) {
         Iterable<Album> albums = albumRepository.findAll();
         m.addAttribute("albums", albums);
         return "allAlbums.html";
