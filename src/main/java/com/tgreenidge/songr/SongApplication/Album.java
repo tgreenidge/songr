@@ -1,9 +1,7 @@
 package com.tgreenidge.songr.SongApplication;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Album {
@@ -16,6 +14,10 @@ public class Album {
     private long length;
     private String imageUrl;
 
+    // mappedBy String comes from name of instance var in Greeting.java
+    @OneToMany(mappedBy = "album")
+    List<Song> songs;
+
     public Album(){}
 
     public Album(String title, String artist, int songCount, long length, String imageUrl) {
@@ -24,6 +26,10 @@ public class Album {
         this.songCount = songCount;
         this.length = length;
         this.imageUrl = imageUrl;
+    }
+
+    public Album(String title) {
+        this.title = title;
     }
 
     public String getArtist() {
@@ -68,5 +74,9 @@ public class Album {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
     }
 }
