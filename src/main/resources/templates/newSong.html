@@ -1,0 +1,18 @@
+<!--https://spring.io/guides/gs/handling-form-submission/-->
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Create new song</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <h1>Form</h1>
+        <form action="/songs/new" method="post" modelAttribute="song">
+            <p>Title: <input type="text" name = "title" /></p>
+            <p>Album Name: <input type="text" name="album" /></p>
+            <p>Track Number of Song in Album: <input type="number" name="trackNumber" /></p>
+            <p>Length of Song in Seconds: <input type="number" name="length" /></p>
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        </form>
+    </body>
+</html>
